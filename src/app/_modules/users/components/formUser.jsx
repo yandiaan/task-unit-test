@@ -1,18 +1,18 @@
 "use client";
 import React, { useState } from "react";
-import { useTheme } from "@/app/_contexts/ThemeContext";
 import { addUser } from "@/app/_services";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useTranslations } from "@/app/_hooks/langHooks";
 import Input from "@/app/_components/input";
 import Button from "@/app/_components/button";
+import useThemeStore from "@/app/_store/theme-store";
 
 const FormUser = () => {
   const [name, setName] = useState("");
   const [gender, setGender] = useState("");
   const [email, setEmail] = useState("");
-  const { theme } = useTheme();
+  const { theme } = useThemeStore();
   const { formUser } = useTranslations();
 
   const handleNameChange = (e) => {
@@ -40,7 +40,6 @@ const FormUser = () => {
       const user = await addUser(payload);
       toast.success("Sukses Menambah User");
     } catch (error) {
-      console.log(error)
       toast.error("Gagal Menambahkan Data");
       setName("");
       setEmail("");

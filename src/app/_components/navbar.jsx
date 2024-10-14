@@ -6,14 +6,14 @@ import cx from "classnames";
 import { MdLightMode, MdDarkMode } from "react-icons/md";
 import { useLang } from "@/app/_contexts/LangContext";
 import { navData } from "@/app/_lib/navData";
-import { useTheme } from "@/app/_contexts/ThemeContext";
 import LanguageSelector from "./languageSelector";
 import Button from "./button";
 import NavLink from "./navLink";
+import useThemeStore from "@/app/_store/theme-store";
 
 export default function Navbar() {
   const { lang, changeLang } = useLang();
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme } = useThemeStore();
   const data = navData(lang);
 
   const languageOptions = [

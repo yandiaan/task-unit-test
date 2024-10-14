@@ -3,8 +3,6 @@ export * from './get-post-per-page';
 export * from './get-post-by-id';
 export * from './get-comments';
 export * from './get-user';
-export * from './search-user';
 export * from './add-user';
-export * from './update-user';
 export * from './delete-user';
 export * from './add-comment';

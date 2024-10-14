@@ -1,6 +1,6 @@
 import Navbar from "@/app/_components/navbar";
 import { LangProvider } from "@/app/_contexts/LangContext";
-import { ThemeProvider } from "@/app/_contexts/ThemeContext";
+import { ThemeProvider } from "@/app/_store/theme-store";
 import React, { Suspense } from "react";
 import { ToastContainer } from "react-toastify";
 

@@ -43,8 +43,6 @@ describe("Posts", () => {
       expect(languageSelector).toHaveValue("id");
     });
 
-    // expect to have text "Baca Blog Terbaru Kami"
-
     expect(getByText(/baca blog terbaru kami/i)).toBeVisible();
     expect(getByText(/post terbaru/i)).toBeVisible();
   })
